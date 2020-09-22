@@ -1,16 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <MouseMove></MouseMove>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MouseMove from './components/MouseMove.vue'
+import {  reactive } from "vue";
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    MouseMove
+  },
+  setup() {
+    const position = reactive({
+      x: "x",
+      y: "y",
+    });
+
+    return {
+      position,
+    };
+  },
 }
 </script>
 
